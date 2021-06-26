@@ -1,0 +1,7 @@
+edition = "2021"
+format_strings = true
+reorder_impl_items = true
+report_fixme = "Unnumbered"
+use_field_init_shorthand = true
+use_try_shorthand = true
+wrap_comments = true
