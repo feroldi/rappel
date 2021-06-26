@@ -72,8 +72,8 @@ mod tests {
 
     #[test]
     fn carrying_out_is_commutative_in_addition() {
-        let a = BigInt { high: 0, low: MAX };
-        let b = BigInt { high: 0, low: 1 };
+        let a = BigInt { high: 3, low: MAX };
+        let b = BigInt { high: 5, low: 1 };
 
         let a_plus_b = a + b;
         let b_plus_a = b + a;
