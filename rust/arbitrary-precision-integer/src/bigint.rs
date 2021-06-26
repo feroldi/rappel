@@ -2,8 +2,8 @@ use std::ops::Add;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 struct BigInt {
-    high: u64,
-    low: u64,
+    high: u128,
+    low: u128,
 }
 
 impl Add for BigInt {
@@ -11,7 +11,7 @@ impl Add for BigInt {
 
     fn add(self, other: BigInt) -> BigInt {
         let (low_add, has_overflowed) = self.low.overflowing_add(other.low);
-        let high_add = self.high + other.high + has_overflowed as u64;
+        let high_add = self.high + other.high + has_overflowed as u128;
         BigInt {
             high: high_add,
             low: low_add,
@@ -23,10 +23,10 @@ impl Add for BigInt {
 mod tests {
     use super::BigInt;
 
-    const MAX: u64 = u64::MAX;
+    const MAX: u128 = u128::MAX;
 
     #[test]
-    fn keep_result_in_low_part_when_addition_fits_64_bit() {
+    fn keep_result_in_low_part_when_addition_doesnt_overflow() {
         let a = BigInt {
             high: 0,
             low: MAX - 1,
