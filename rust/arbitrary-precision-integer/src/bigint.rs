@@ -1,5 +1,7 @@
 use std::ops::Add;
 
+// TODO: Implement arbitrary size.
+// Should be something like `enum { Small(u128), Big(Vec<u128>) }`.
 #[derive(Clone, Copy, Debug, PartialEq)]
 struct BigInt {
     high: u128,
