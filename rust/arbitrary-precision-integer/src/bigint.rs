@@ -6,15 +6,6 @@ struct BigInt {
     low: u64,
 }
 
-impl From<u64> for BigInt {
-    fn from(value: u64) -> BigInt {
-        BigInt {
-            high: 0,
-            low: value,
-        }
-    }
-}
-
 impl Add for BigInt {
     type Output = BigInt;
 
